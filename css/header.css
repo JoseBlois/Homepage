@@ -10,6 +10,7 @@ header h1{
     padding: 0px;
     margin: 20px 0px;
     color: #fff;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 header small{
     display: block;

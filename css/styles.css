@@ -8,7 +8,7 @@ body{
     font-size: 16px;
 }
 
-/*Navbar*/
+/* Navbar */
 
 #nav-bar{
     margin-bottom: 30px;
@@ -27,4 +27,29 @@ body{
     display: none;
 }
 
-/*Main Content*/
+/* Main Content */
+#main-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 95%;
+    margin: auto;
+}
+
+/* Main News */
+
+#main-container{
+    margin-bottom: 30px;
+}
+
+/* Secondary News */
+
+#secondary-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 50px;
+}
+

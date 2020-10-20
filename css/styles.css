@@ -117,12 +117,28 @@ body{
 }
 
 /* Ads */
-
-.ads{
-    height: 200px;
-    width: 100%;
-    background-color: lightcoral;
+#ads{
+    background-color: #000;
+    border-radius: 10px;
 }
+#ads h4{
+    text-align: center;
+    font-size: 20px;
+    color: #fff
+}
+#ads h4 a{
+    color: #f00;
+    text-decoration: none;
+}
+#ads h4 a:hover{
+    text-decoration: underline;
+}
+#ads img {
+    width: 100%;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
 @media (min-width:768px){
     #nav-bar .icon-container{
         display: none;

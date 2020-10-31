@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/header-and-footer.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <title>Suscription Form</title>
+</head>
+<body>
+    <header>
+        <h1>We're NotCNN</h1>
+        <small>19/10/2020</small>
+    </header>
+    <nav id="nav-bar">
+        <div class="icon-container">
+            <img src="./images/menu-icon.png" alt="">
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Global</a></li>
+            <li><a href="#">Sports</a></li>
+            <li><a href="#">Politics</a></li>
+            <li><a href="#">Culture</a></li>
+        </ul>
+    </nav>
+    <section>
+        <h2>Suscription Form</h2>
+        <form action="">
+            <div class="form-fields-container">
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="name-input">Full Name:</label>
+                        <input type="text" name="name-input" id="name-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="email-input">Email:</label>
+                        <input type="email" name="email-input" id="email-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="password-input">Password:</label>
+                        <input type="password" name="password-input" id="password-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="age-input">Age:</label>
+                        <input type="number" min="18" name="age-input" id="age-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="tel-input">Telephone:</label>
+                        <input type="tel" name="tel-input" id="tel-input">
+                    </div>
+                </div>
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="adress-input">Adress</label>
+                        <input type="text" name="adress-input" id="adress-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="city-input">City</label>
+                        <input type="text" name="city-input" id="city-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="pcode-input">Postal Code</label>
+                        <input type="text" name="pcode-input" id="pcode-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="dni-input">DNI</label>
+                        <input type="text" name="dni-input" id="dni-input">
+                    </div>
+                </div>
+            </div>
+            <input type="submit" value="submit">
+        </form>
+    </section>
+    <footer>
+        <span>The content shown on this page is copyrighted under the name of NotCNN &copy; 2020</span>
+    </footer>
+</body>
+</html>

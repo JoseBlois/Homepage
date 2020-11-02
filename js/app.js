@@ -153,6 +153,50 @@ telInput.onfocus = function(){
     span = getSpan(telInput);
     hideSpan(span);
 }
+
+//City input error handling
+
+var validateCity = function(){
+    var value = cityInput.value;
+    var span = getSpan(cityInput);
+    var threeChars = false;
+    hideSpan(span);
+    if(value.length < 3){
+        reportError(span,'*The name of the city is too short (3 or more characters)*');
+    } else {
+        threeChars = true;
+    }
+    return threeChars;
+}
+
+cityInput.onblur = validateCity;
+
+cityInput.onfocus = function(){
+    var span = getSpan(cityInput);
+    hideSpan(span);
+}
+
+//Postal Code input error handling
+
+var validatePCode = function(){
+    var value = postalCodeInput.value;
+    var span = getSpan(postalCodeInput);
+    var threeChars = false;
+    hideSpan(span);
+    if(value.length < 3){
+        reportError(span,'*The postal code is too short (3 or more characters)*');
+    } else {
+        threeChars = true;
+    }
+    return threeChars;
+}
+
+postalCodeInput.onblur = validatePCode;
+
+postalCodeInput.onfocus = function(){
+    var span = getSpan(postalCodeInput);
+    hideSpan(span);
+}
 /*Error Message Functions*/
 
 var hideSpan = function(span){

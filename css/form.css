@@ -1,5 +1,6 @@
-body{
-    height: 100vh;
+body {
+    margin: 0px;
+    min-height: 100vh;
     padding: 0px;
 }
 .main-content {
@@ -8,7 +9,7 @@ body{
     margin: auto;
     text-align: center;
 }
-.main-content h2{
+.main-content h2 {
     text-align: center;
 }
 
@@ -19,7 +20,7 @@ body{
     /* justify-content: space-around; */
 }
 .form-column {
-    flex: 1;
+    flex: 100%;
     padding: 0px 20px;
     text-align: left;
     background-color: lightcoral;
@@ -29,16 +30,17 @@ body{
     flex-direction: column;
     margin-bottom: 40px;
 }
-.form-group label{
+.form-group label {
     white-space: nowrap;
     font-family: 'Open Sans', sans-serif;
 }
-.form-group input{
+.form-group input {
+    width: 100%;
     border: none;
     border-radius: 5px;
     font-size: 20px;
 }
-#submit-button{
+#submit-button {
     margin: 15px auto;
     padding: 10px;
     width: 30%;
@@ -49,7 +51,12 @@ body{
     color: #000;
     background-color: #ffa500;;
 }
-#submit-button:hover{
+#submit-button:hover {
     color: #fff;
     cursor: pointer;
+}
+@media (min-width:1024px) {
+    .form-column {
+        flex: 1;
+    }
 }

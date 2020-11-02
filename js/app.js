@@ -14,6 +14,13 @@ var dniInput = document.getElementById('dni-input');
 
 var submitButton = document.getElementById('submit-button');
 
+//Regular expressions
+var mailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+var passwordFormat = /^(?=.*[0-9])[A-Za-z0-9]+/;
+var passwordWithALetterFormat = /^(?=.*[a-z])[A-Za-z0-9]+/
+
+//Name input error handling
+
 nameInput.onblur = function(){
     var value = nameInput.value;
     var span = getSpan(nameInput);
@@ -29,6 +36,40 @@ nameInput.onfocus = function(){
     hideSpan(span);
 }
 
+//Email input error handling
+
+emaiInput.onblur = function(){
+    var value = emaiInput.value;
+    var span = getSpan(emaiInput);
+    if(!value.match(mailFormat)){
+        reportError(span,'*Invalid email format*')
+    }
+}
+emaiInput.onfocus = function(){
+    var span = getSpan(emaiInput);
+    hideSpan(span);
+}
+
+//Password input error handling
+
+passInput.onblur = function(){
+    value = passInput.value;
+    span = getSpan(passInput);
+    if(value.length < 8){
+        reportError(span,'*Your password must be at least 8 characters long*')
+    }
+    if(!value.match(passwordFormat)){
+        reportError(span,'*Your password must contain a number*')
+    }
+    if(!value.match(passwordWithALetterFormat)){
+        reportError(span,'*Your password must contain a letter*');
+    }
+}
+
+passInput.onfocus = function(){
+    span = getSpan(passInput);
+    hideSpan(span);
+}
 /*Error Involve Functions*/
 
 var hideSpan = function(span){

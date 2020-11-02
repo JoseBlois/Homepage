@@ -23,7 +23,7 @@ body {
     flex: 100%;
     padding: 0px 20px;
     text-align: left;
-    background-color: lightcoral;
+    background-color: lightgrey;
 }
 .form-group {
     display: flex;

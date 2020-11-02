@@ -55,6 +55,12 @@ body {
     color: #fff;
     cursor: pointer;
 }
+.non-visible {
+    display: none;
+}
+.error-message {
+    color: #ff0033;
+}
 @media (min-width:1024px) {
     .form-column {
         flex: 1;

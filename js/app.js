@@ -17,6 +17,7 @@ var submitButton = document.getElementById('submit-button');
 //Regular expressions
 var mailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 var passwordFormat = /^(?=.*[0-9])[A-Za-z0-9]+/;
+var adressFormat = /^[0-9a-zA-Z\s]+$/;
 
 //Name input error handling
 
@@ -223,6 +224,40 @@ dniInput.onblur = validateDNI;
 
 dniInput.onfocus = function(){
     var span = getSpan(dniInput);
+    hideSpan(span);
+}
+
+//Adress input error handling
+
+var validateAdress = function(){
+    var value = adressInput.value;
+    var span = getSpan(adressInput);
+    var lettersAndNum = false;
+    var fiveChars = false;
+    var containSpace = false;
+    hideSpan(span);
+    if(!value.match(adressFormat)){
+        reportError(span,'*The adress field must contain letters and numbers*');
+    } else {
+        lettersAndNum = true;
+    }
+    if(value.length < 5){
+        reportError(span,'*The adress field must be 5 or more charecters long*');
+    } else {
+        fiveChars = true;
+    }
+    if(value.indexOf(' ')===-1 || value.indexOf(' ')===0 || value.indexOf(' ')===value.length-1){
+        reportError(span,'*There should be a space only in the middle of the adress*');
+    } else {
+        containSpace = true;
+    }
+    return (containSpace && fiveChars && lettersAndNum);
+}
+
+adressInput.onblur = validateAdress;
+
+adressInput.onfocus = function(){
+    var span = getSpan(adressInput);
     hideSpan(span);
 }
 /*Error Message Functions*/

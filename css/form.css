@@ -4,12 +4,14 @@ body {
     padding: 0px;
 }
 .main-content {
-    background-color: lightblue;
     width: 60%;
-    margin: auto;
+    margin: 50px auto 100px;
+    border: 20px solid #ffa500;
+    border-radius: 10px;
     text-align: center;
 }
 .main-content h2 {
+    font-family: 'Roboto Condensed', sans-serif;
     text-align: center;
 }
 
@@ -22,8 +24,8 @@ body {
 .form-column {
     flex: 100%;
     padding: 0px 20px;
+    background-color: #e4e4e4;
     text-align: left;
-    background-color: lightgrey;
 }
 .form-group {
     display: flex;
@@ -38,6 +40,7 @@ body {
     width: 100%;
     border: none;
     border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
     font-size: 20px;
 }
 #submit-button {
@@ -64,5 +67,6 @@ body {
 @media (min-width:1024px) {
     .form-column {
         flex: 1;
+        padding-top: 20px;
     }
 }

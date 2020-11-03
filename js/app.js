@@ -197,6 +197,34 @@ postalCodeInput.onfocus = function(){
     var span = getSpan(postalCodeInput);
     hideSpan(span);
 }
+
+// DNI input error handling
+
+var validateDNI = function(){
+    var value = dniInput.value;
+    var span = getSpan(dniInput);
+    var onlyDigits = false;
+    var righLength = false;
+    hideSpan(span);
+    if(value.length === 7 || value.length === 8){
+        righLength = true;
+    } else {
+        reportError(span,'*Your DNI must be 7 or 8 digits long*')
+    }
+    if(!value.match(/^[0-9]+$/)){
+        reportError(span,'*Your DNI must consist of only numbers*')
+    } else {
+        onlyDigits = true;
+    }
+    return (onlyDigits && righLength);
+}
+
+dniInput.onblur = validateDNI;
+
+dniInput.onfocus = function(){
+    var span = getSpan(dniInput);
+    hideSpan(span);
+}
 /*Error Message Functions*/
 
 var hideSpan = function(span){

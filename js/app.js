@@ -17,7 +17,7 @@ var submitButton = document.getElementById('submit-button');
 //Regular expressions
 var mailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 var passwordFormat = /^(?=.*[0-9])[A-Za-z0-9]+/;
-var adressFormat = /^[0-9a-zA-Z\s]+$/;
+var adressFormat = /^(?=.*[0-9])(?=.*[a-zA-Z])[0-9a-zA-Z\s]+$/;
 
 //Name input error handling
 
@@ -55,6 +55,8 @@ var validateEmail = function(){
     var validEmail = false;
     if(!value.match(mailFormat)){
         reportError(span,'*Invalid email format*')
+    } else {
+        validEmail = true;
     }
     return validEmail;
 }
@@ -259,6 +261,23 @@ adressInput.onblur = validateAdress;
 adressInput.onfocus = function(){
     var span = getSpan(adressInput);
     hideSpan(span);
+}
+
+//Submit button event handling
+
+submitButton.onclick = function(e){
+    e.preventDefault();
+    if( validateName() && validateEmail() && validatePassword() &&
+        validateAge() && validateTelephone() && validateCity() &&
+        validatePCode() && validateDNI() && validateAdress() ){
+        alert('Fullname: ' + nameInput.value + '\nEmail: ' + emaiInput.value +
+            '\nPassword: '+passInput.value+ '\nAge: ' + ageInput.value +
+            '\nTEL: '+telInput.value+'\nCity: ' +cityInput.value+ '\nAdress: '+ adressInput.value +
+            '\nPostal code: '+postalCodeInput.value+
+            '\nDNI: '+dniInput.value);
+    } else {
+        alert('There was an error with one of the form fields');
+    }
 }
 /*Error Message Functions*/
 
